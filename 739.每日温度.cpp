@@ -26,12 +26,29 @@
 #include <iostream>
 #include <vector>
 using std::vector, std::endl;
+// NOTE : Inverse DP
 class Solution
 {
 public:
-    vector<int> dailyTemperatures(vector<int>& T) {
-        
+    vector<int> dailyTemperatures(vector<int> &T)
+    {
+        vector<int> dp(T.size(), 0);
+        for (int i = T.size() - 2; i >= 0; i--)
+        {
+            for (int depth = 1; depth + i < T.size();)
+            {
+                if (T[i + depth] > T[i])
+                {
+                    dp[i] = depth;
+                    break;
+                }
+                else if (dp[i + depth] == 0)
+                    break;
+                else
+                    depth += dp[i + depth];
+            }
+        }
+        return dp;
     }
 };
 // @lc code=end
-

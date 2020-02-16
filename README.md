@@ -1,11 +1,16 @@
-# my leetcode solution repo
+# My leetcode solution repo
 
 ## DataStructure
-- array
-- queue
-- stack
-- list
+- Array
+- Queue
+- Stack
+- List
+- Tree
+  - DFS
+  - Inorder traversal 
+  - Morris 114(Feb 16th)
 
 ## Algorithms
-- greedy
+- Greedy
+- Dynamic
 

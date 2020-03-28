@@ -7,3 +7,4 @@
 ```
 m==n==1 // will always return True if m==n
 ```
+- check array border

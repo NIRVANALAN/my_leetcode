@@ -6,6 +6,7 @@
 #include <iostream>
 #include <string>
 #include <algorithm>
+#include <math.h>
 // using std::min;
 // using std::string;
 using namespace std;

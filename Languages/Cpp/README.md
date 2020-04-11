@@ -18,3 +18,8 @@ s.substr(i,n);//return sub_string with n characters from i
 m==n==1 // will always return True if m==n
 ```
 - check array border
+
+# Advance
+
+## left reference (c++11)  
+###TODO

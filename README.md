@@ -11,6 +11,7 @@
   - Morris 114(Feb 16th)
 
 ## Algorithms
+- Dynamic Programming
 - Greedy
-- Dynamic
+- Trace
 

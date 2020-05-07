@@ -23,11 +23,6 @@ public:
     int lower_right(vector<vector<int>> &matrix)
     {
         int rst = 0;
-        // for (size_t i = 0; i < matrix.size(); i++)
-        //     rst += matrix[i][0];
-        // for (size_t i = 0; i < matrix[0].size(); i++)
-        //     rst += matrix[0][i];
-
         for (size_t i = 0; i < matrix.size(); i++)
         {
             for (size_t j = 0; j < matrix[0].size(); j++)

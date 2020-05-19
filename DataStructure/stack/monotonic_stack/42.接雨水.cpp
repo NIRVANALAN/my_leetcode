@@ -1,9 +1,9 @@
+
 /*
  * @lc app=leetcode.cn id=42 lang=cpp
  *
  * [42] 接雨水
  */
-
 // @lc code=start
 #include <iostream>
 #include <vector>

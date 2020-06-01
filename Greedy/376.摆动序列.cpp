@@ -7,7 +7,9 @@
 // @lc code=start
 #include <vector>
 #include <iostream>
+#include <string>
 using std::cout;
+using std::string;
 using std::vector;
 class Solution
 {
@@ -16,39 +18,23 @@ public:
     {
         if (nums.size() < 2)
             return nums.size();
-        bool pos = false, neg = false;
+        string flag;
         int rst = 1;
 
         for (size_t i = 1; i < nums.size(); i++)
         {
-            if (nums[i] > nums[i - 1] && !pos)
+            if (nums[i] > nums[i - 1] && (!flag.compare("neg") || !flag.size()))
             {
-                pos = true;
-                neg = false;
-                // neg = !neg;
+                flag = "pos";
                 rst++;
             }
-            else if (nums[i] < nums[i - 1] && !neg)
+            else if (nums[i] < nums[i - 1] && (!flag.compare("pos") || !flag.size()))
             {
-                neg = true;
-                pos = false;
+                flag = "neg";
                 rst++;
             }
         }
         return rst;
-
-        // for (i += 1; i < nums.size(); i++)
-        // {
-        //     if (nums[i] == nums[i - 1])
-        //         continue;
-        //     if (bool(nums[i] > tmp) == flag)
-        //     {
-        //         rst += 1;
-        //         flag = !flag;
-        //         tmp = nums[i];
-        //         cout << tmp << " ";
-        //     }
-        // }
     }
 };
 // @lc code=end

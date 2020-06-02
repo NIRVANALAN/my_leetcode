@@ -1,6 +1,8 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <queue>
+using namespace std;
 
 /*
 comp
@@ -25,12 +27,10 @@ bool comp_vector(const std::vector<int> a, const std::vector<int> b)
 
 void sort_test()
 {
-
     int myints[] = {32, 71, 12, 45, 26, 80, 53, 33};
     std::vector<int> a = {1, 5};
     std::vector<int> b = {2, 4};
     std::vector<std::vector<int>> myvector = {a, b};
-
     // std::sort(myvector.begin(), myvector.end(), comp);
     std::sort(myvector.begin(), myvector.end(), comp_vector);
     for (size_t i = 0; i < myvector.size(); i++)
@@ -42,10 +42,8 @@ void sort_test()
 
 void comp_array()
 {
-
     int myints[] = {32, 71, 12, 45, 26, 80, 53, 33};
     std::vector<int> myvector(myints, myints + sizeof(myints) / sizeof(int));
-
     // std::sort(myvector.begin(), myvector.end(), comp);
     // std::sort(myvector.begin(), myvector.end(), my_comp_object);
     std::sort(myvector.begin(), myvector.end(), [](int l, int r) {
@@ -58,8 +56,39 @@ void comp_array()
     std::cout << std::endl;
 }
 
+void pque()
+{
+    int a = 5, b = 7, c = 4;
+    typedef pair<int, char> IC;
+    struct cmp
+    {
+        bool operator()(IC a, IC b)
+        {
+            return a.first < b.first;
+        }
+    };
+
+    vector<IC> m = {{a, 'a'}, {b, 'b'}, {c, 'c'}};
+    // priority_queue<IC, vector<IC>, cmp> pq;
+    priority_queue<IC, vector<IC>, less<IC>> pq; //less<> by default
+    for (auto &&[first, second] : m)
+    {
+        cout << second << ":" << first << endl;
+    }
+
+    for (auto &&i : m) // sort while insert
+    {
+        pq.push(i);
+    }
+    cout << "=====after sort====" << endl;
+    while (pq.size())
+    {
+        cout << pq.top().second << ":" << pq.top().first << endl;
+        pq.pop();
+    }
+}
 int main(int argc, char const *argv[])
 {
-    comp_array();
+    pque();
     return 0;
 }

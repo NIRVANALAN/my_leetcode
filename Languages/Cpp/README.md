@@ -33,6 +33,28 @@ std::sort(myvector.begin(), myvector.end(), [](int l, int r) {
     return l < r;
 });
 ```
+- via priority_queue
+```
+struct cmp
+{
+    bool operator()(IC a, IC b)
+    {
+        return a.first < b.first;
+    }
+};
+
+vector<IC> m = {{a, 'a'}, {b, 'b'}, {c, 'c'}};
+// priority_queue<IC, vector<IC>, cmp> pq;
+priority_queue<IC, vector<IC>, less<IC>> pq; //less<> by default
+```
+## C++ 11
+- for_range
+```
+for (auto &&[first, second] : m)
+{
+    cout << second << ":" << first << endl;
+}
+```
 
 ## left reference (c++11)  
 ### TODO

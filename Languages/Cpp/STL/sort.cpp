@@ -89,6 +89,21 @@ void pque()
 }
 int main(int argc, char const *argv[])
 {
-    pque();
+    // pque();
+    priority_queue<int, vector<int>, greater<int>> pq;
+    // cout << pq.top(); //rediculous...
+    for (size_t i = 0; i < 100; i++)
+    {
+        pq.push(50 - i);
+    }
+    while (!pq.empty())
+    {
+        cout << pq.top() << " ";
+        pq.pop();
+    }
+    cout << "---" << endl;
+    cout << pq.top(); //rediculous...
+    cout << pq.top(); //rediculous...
+
     return 0;
 }

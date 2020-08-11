@@ -33,7 +33,7 @@ std::sort(myvector.begin(), myvector.end(), [](int l, int r) {
     return l < r;
 });
 ```
-- via priority_queue
+## via priority_queue
 ```
 struct cmp
 {

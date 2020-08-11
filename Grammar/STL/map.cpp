@@ -16,6 +16,11 @@ int main(int argc, char const *argv[])
     //unavailable when key exists
     chains[2] = "nirvanalan";
     chains[10] = "lawulawu";
+    // when not exist
+    map<int, int> counter;
+    counter[100]++;
+    //*The operator[] will search for the key, insert a default constructed value if not found, and return a reference to which you assign a value.
+    cout << counter[100] << endl;
 
     auto rst = chains.insert(pair<int, string>(3, "another one"));
     cout << rst.second << "\n"; // true if insert successfully

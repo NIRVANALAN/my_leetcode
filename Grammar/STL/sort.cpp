@@ -17,7 +17,10 @@ bool comp(int i, int j)
 }
 struct comp_object
 {
-    bool operator()(int i, int j) { return i < j; }
+    bool operator()(int i, int j)
+    {
+        return i < j;
+    }
 } my_comp_object;
 
 bool comp_vector(const std::vector<int> a, const std::vector<int> b)
@@ -89,21 +92,21 @@ void pque()
 }
 int main(int argc, char const *argv[])
 {
-    // pque();
-    priority_queue<int, vector<int>, greater<int>> pq;
+    pque();
+    // priority_queue<int, vector<int>, greater<int>> pq;
     // cout << pq.top(); //rediculous...
-    for (size_t i = 0; i < 100; i++)
-    {
-        pq.push(50 - i);
-    }
-    while (!pq.empty())
-    {
-        cout << pq.top() << " ";
-        pq.pop();
-    }
-    cout << "---" << endl;
-    cout << pq.top(); //rediculous...
-    cout << pq.top(); //rediculous...
+    // for (size_t i = 0; i < 100; i++)
+    // {
+    //     pq.push(50 - i);
+    // }
+    // while (!pq.empty())
+    // {
+    //     cout << pq.top() << " ";
+    //     pq.pop();
+    // }
+    // cout << "---" << endl;
+    // cout << pq.top(); //rediculous...
+    // cout << pq.top(); //rediculous...
 
     return 0;
 }

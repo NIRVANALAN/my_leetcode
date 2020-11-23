@@ -6,6 +6,7 @@
 
 // @lc code=start
 #include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 class Solution
 {
@@ -14,6 +15,7 @@ public:
     {
         // return maxArrayHelper(nums, 0, nums.size() - 1);
         int prefix_subarray_sum = 0, ans = INT_MIN; // sum of array end with i
+        int subfix_subarray_sum = INT_MIN;
         for (auto &&i : nums)
         {
             prefix_subarray_sum += i;
